@@ -4,20 +4,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const noBtn = document.getElementById('no-btn');
     const body = document.body;
 
-    // Swap buttons when hovering over "No"
-    noBtn.addEventListener('mouseenter', () => {
-        const yesPos = yesBtn.getBoundingClientRect();
-        const noPos = noBtn.getBoundingClientRect();
+    // Get the Yes and No buttons
+const yesBtn = document.getElementById('yesBtn');
+const noBtn = document.getElementById('noBtn');
 
-        yesBtn.style.position = "absolute";
-        noBtn.style.position = "absolute";
+// Add an event listener to the No button for when the user hovers over it
+noBtn.addEventListener('mouseenter', () => {
+    // Get the parent container of the buttons
+    const buttonsDiv = document.querySelector('.buttons');
+    
+    // Get the index positions of both buttons
+    const yesIdx = Array.from(buttonsDiv.children).indexOf(yesBtn);
+    const noIdx = Array.from(buttonsDiv.children).indexOf(noBtn);
 
-        yesBtn.style.top = `${noPos.top}px`;
-        yesBtn.style.left = `${noPos.left}px`;
-
-        noBtn.style.top = `${yesPos.top}px`;
-        noBtn.style.left = `${yesPos.left}px`;
-    });
+    // Swap the buttons
+    if (yesIdx < noIdx) {
+        buttonsDiv.insertBefore(noBtn, yesBtn);
+    } else {
+        buttonsDiv.insertBefore(yesBtn, noBtn);
+    }
 
     // Action when clicking "Yes"
     yesBtn.addEventListener('click', () => {
@@ -45,4 +50,3 @@ document.addEventListener('DOMContentLoaded', () => {
         // }, 5000);
     });
 });
-    
