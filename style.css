@@ -1,69 +1,44 @@
-
-/* Set up background and general page styles */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background: url('background.jpg') no-repeat center center fixed;
+    font-family: Arial, sans-serif;
+    background-image: url('https://your-image-url-here.com'); /* Replace with a real background image */
     background-size: cover;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-.container {
+form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
 }
 
-.love-form {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+h2, h3 {
+    margin: 0;
 }
 
 .buttons {
     margin-top: 20px;
 }
 
-button {
+input[type="button"] {
     padding: 10px 20px;
-    margin: 10px;
-    font-size: 18px;
+    margin: 0 10px;
     border: none;
     border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
 }
 
-.yes {
+#yesBtn {
     background-color: green;
     color: white;
 }
 
-.no {
+#noBtn {
     background-color: red;
     color: white;
 }
-
-/* Floating hearts animation */
-.heart {
-    position: absolute;
-    bottom: 0;
-    animation: float 5s infinite;
-    font-size: 2rem;
-    color: red;
-    opacity: 0.8;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-100vh);
-        opacity: 0;
-    }
-}
-    
