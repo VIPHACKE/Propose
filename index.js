@@ -1,10 +1,4 @@
-
-document.addEventListener('DOMContentLoaded', () => {
-    const yesBtn = document.getElementById('yes-btn');
-    const noBtn = document.getElementById('no-btn');
-    const body = document.body;
-
-    // Get the Yes and No buttons
+// Get the Yes and No buttons
 const yesBtn = document.getElementById('yesBtn');
 const noBtn = document.getElementById('noBtn');
 
@@ -23,30 +17,4 @@ noBtn.addEventListener('mouseenter', () => {
     } else {
         buttonsDiv.insertBefore(yesBtn, noBtn);
     }
-
-    // Action when clicking "Yes"
-    yesBtn.addEventListener('click', () => {
-        body.innerHTML = "<h1 style='color:red; text-align:center;'>You said YES! ❤️ Let's be together forever!</h1>";
-
-        // Play sound
-        const audio = new Audio('love-song.mp3');
-        audio.play();
-
-        // Create heart animation
-        for (let i = 0; i < 20; i++) {
-            const heart = document.createElement('div');
-            heart.className = 'heart';
-            heart.textContent = '❤️';
-            heart.style.left = `${Math.random() * 100}vw`;
-            document.body.appendChild(heart);
-
-            // Remove heart after animation ends
-            setTimeout(() => heart.remove(), 5000);
-        }
-
-        // Optionally redirect after a few seconds
-        // setTimeout(() => {
-        //     window.location.href = 'https://your-surprise-url.com';
-        // }, 5000);
-    });
 });
